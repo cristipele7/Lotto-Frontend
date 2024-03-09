@@ -1,6 +1,28 @@
+<div class="input_boxes_container">
+  <label for="name">Number of boxes: </label>
+  <input class="input_boxes" type="number" min="1" [formControl]="numOfBoxes">
+  <div class="checkbox_superzahl">
+    <input type="checkbox" [formControl]="superzahl">
+    <label for="name">Superzahl</label>
+  </div>
+  <button class="draw_ticket_button" (click)="drawTickets()">Draw ticket</button>
+</div>
+
 <div>
   <p>Number of tickets: {{ tickets.length }}</p>
   <div *ngFor="let ticket of tickets">
-    <div class="ticket_container">{{ ticket.id }}</div>
+    <div class="ticket_container">
+      <p (click)="clickTicket(ticket.id)" class="ticket_text">
+        Ticket nr. {{ ticket.id }}<span *ngIf="!!ticket.superzahl">. Superzahl: {{ ticket.superzahl }}</span>
+      </p>
+      <mat-icon (click)="deleteTicket(ticket.id)" class="delete_icon">delete</mat-icon>
+    </div>
+  </div>
+</div>
+
+<div>
+  <p>Frequency by numbers</p>
+  <div class="freq_container" *ngFor="let f of frequency; index as i">
+    <p><span class="number">{{ i + 1 }}</span>: {{ f }}</p>
   </div>
 </div>

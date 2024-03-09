@@ -1,0 +1,7 @@
+<button class="back_button" (click)="back()">Back</button>
+<div *ngFor="let box of ticket?.boxes; index as i">
+  <div class="ticket_container">
+    <p class="ticket_text">Box {{ i + 1 }} - {{ box.numbers }}</p>
+  </div>
+</div>
+<p *ngIf="!!ticket?.superzahl">Superzahl: {{ ticket?.superzahl }}</p>

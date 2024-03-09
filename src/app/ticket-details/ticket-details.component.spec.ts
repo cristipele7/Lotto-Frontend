@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NumBoxesComponent } from './num-boxes.component';
+import { TicketDetailsComponent } from './ticket-details.component';
 
-describe('NumBoxesComponent', () => {
-  let component: NumBoxesComponent;
-  let fixture: ComponentFixture<NumBoxesComponent>;
+describe('TicketDetailsComponent', () => {
+  let component: TicketDetailsComponent;
+  let fixture: ComponentFixture<TicketDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NumBoxesComponent ]
+      declarations: [ TicketDetailsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NumBoxesComponent);
+    fixture = TestBed.createComponent(TicketDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

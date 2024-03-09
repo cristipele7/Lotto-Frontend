@@ -19,4 +19,12 @@ export class HttpService {
   getTickets(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(`${this.url}/ticket`);
   }
+
+  getTicket(id: number): Observable<Ticket> {
+    return this.http.get<Ticket>(`${this.url}/ticket/${id}`);
+  }
+
+  deleteTicket(id: number): Observable<Ticket> {
+    return this.http.delete<Ticket>(`${this.url}/ticket/${id}`);
+  }
 }
